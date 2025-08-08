@@ -90,10 +90,3 @@ These features were selected because they are simple and effective.
 - Gradio
 
 ---
-
-## Future Improvements
-
-- Add more features for better predictions  
-- Try other models like XGBoost or LightGBM  
-- Add batch prediction support  
-- Improve the UI layout for clarity
