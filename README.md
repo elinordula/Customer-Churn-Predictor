@@ -1,18 +1,18 @@
-# Customer-Churn-Predictor
+Customer Churn Predictor
 
-#Overview
+Overview
 This project is a simple machine learning-based tool that predicts whether a customer is likely to churn (leave the service) or stay, based on a few input features. It uses the Telco Customer Churn dataset and is built using Python libraries such as pandas, scikit-learn, and Gradio.
 
-A clean user interface is provided using Gradio so that anyone can interact with the trained model without writing any code.
+A user-friendly interface is provided using Gradio, so anyone can interact with the trained model without writing any code.
 
-#Dataset Used
-The dataset used in this project is the Telco Customer Churn dataset, which is available on Kaggle.
+Dataset Used
+The dataset used in this project is the Telco Customer Churn dataset, available on Kaggle.
 
 It contains customer-level information such as:
 
 Gender
 
-Whether they are a senior citizen
+Whether the customer is a senior citizen
 
 Tenure (how long they’ve been with the service)
 
@@ -20,12 +20,12 @@ Monthly charges
 
 Type of contract (monthly, yearly, etc.)
 
-And more…
+And more
 
 The target column is Churn, which indicates whether the customer has left the company.
 
 Features Used in the Prediction
-The current model uses the following features from the dataset for making predictions:
+The current model uses the following features for making predictions:
 
 gender (0 = Female, 1 = Male)
 
@@ -37,55 +37,50 @@ MonthlyCharges
 
 Contract (0 = Month-to-month, 1 = One year, 2 = Two year)
 
-These features were chosen because they are simple and still give a good prediction performance.
+These features were selected because they are simple and effective in making accurate predictions.
 
-#How It Works
-Data Cleaning
-
+How It Works
+1. Data Cleaning
 Removed missing or inconsistent values
 
 Converted total charges to numeric format
 
-Removed non-informative columns like customer ID
+Dropped non-informative columns like customer ID
 
-Label Encoding
+2. Label Encoding
+Converted categorical variables to numeric values to be usable in a machine learning model
 
-Converted categorical variables to numeric format so they can be used in a machine learning model.
+3. Train/Test Split
+Split the dataset into 80% training and 20% testing sets
 
-Train/Test Split
+4. Feature Scaling
+Standardized the numeric features using StandardScaler
 
-Split the dataset into training and testing sets (80% training, 20% testing).
+5. Model Training
+Trained a Random Forest Classifier with 100 decision trees
 
-Feature Scaling
+Achieved an accuracy of approximately 79% on the test data
 
-Applied standardization to numeric features to make the model training more efficient.
+6. Evaluation
+Evaluated the model using metrics like accuracy, precision, recall, and confusion matrix
 
-Model Training
+Visualized the most important features in the dataset
 
-Used a Random Forest Classifier with 100 decision trees.
+7. Gradio Interface
+Created a simple interactive UI using Gradio
 
-Model accuracy reached around 79% on test data.
+Users can enter values for five features and receive a prediction:
 
-Evaluation
+Will Churn
 
-Evaluated the model using accuracy, precision, recall, and confusion matrix.
+Will Stay
 
-Also plotted feature importances.
-
-Gradio Interface
-
-Built a simple web UI where users can enter values for the five selected features and get a prediction:
-
-"Will Churn"
-
-"Will Stay"
-
-#Example Inputs
+Example Inputs
 Gender	SeniorCitizen	Tenure	MonthlyCharges	Contract	Output
 0	0	2	95	0 (Month-to-Month)	Will Stay
-1	1	1	105	0	Will Churn
+1	1	1	105	0 (Month-to-Month)	Will Churn
 
-#Tools and Libraries Used
+Tools and Libraries Used
 Python
 
 Pandas
@@ -94,8 +89,6 @@ NumPy
 
 Scikit-learn
 
-Matplotlib & Seaborn (for visualization)
+Matplotlib and Seaborn (for data visualization)
 
-Gradio (for interactive UI)
-Improve the user interface for better clarity
-
+Gradio (for creating the interactive web interface)
